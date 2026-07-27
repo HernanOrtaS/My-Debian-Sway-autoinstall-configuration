@@ -1,0 +1,9 @@
+{
+	"pulseaudio": {
+		"format": " {volume}%",
+		"format-muted": " <s>{volume}%</s>",
+		"scroll-step": 1,
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-click-right": "pavucontrol",
+	}
+}

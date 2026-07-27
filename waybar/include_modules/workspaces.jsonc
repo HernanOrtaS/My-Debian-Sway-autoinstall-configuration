@@ -1,0 +1,7 @@
+{
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"warp-on-scroll": false
+	},
+}

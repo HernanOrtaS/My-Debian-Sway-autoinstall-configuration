@@ -1,0 +1,79 @@
+{
+	"layer": "top",
+	"reload_style_on_change": true,
+	"output": "eDP-1",
+	"margin-top": 5,
+	"margin-left": 5,
+	"margin-right": 5,
+	
+	
+	"modules-left": ["group/l-workspace", "sway/workspaces", "group/r-workspace", "sway/mode"],
+	"modules-center": ["group/l-window", "sway/window", "group/r-window"],
+	
+	"modules-right": [
+		"group/l-performance", "group/performance", "group/r-performance",
+		"group/l-options", "group/options", "group/r-options",
+		"group/l-utility", "group/utility", "group/r-utility",
+	],
+	
+	"group/performance": {
+		"orientation": "horizontal",
+		"modules": [
+			"memory",
+			"cpu",
+			"battery",
+			"temperature",
+		],
+		
+		"drawer": {
+			"transition-duration": 300,
+			"click-to-reveal": false
+		},
+	},
+	
+	"group/options": {
+		"orientation": "horizontal",
+		"modules": [
+			"pulseaudio",
+			"backlight",
+			"sway/language",
+			"network",
+		],
+		
+		"drawer": {
+			"transition-duration": 300,
+			"click-to-reveal": false
+		},
+	},
+	
+	"group/utility": {
+		"orientation": "horizontal",
+		"modules": [
+			"clock",
+			"tray",
+			"custom/notification",
+			"custom/powermenu",
+		],
+		
+		"drawer": {
+			"transition-duration": 300,
+			"click-to-reveal": false
+		},
+	},
+
+	"include": [
+		"~/.config/sway/waybar/include_modules/powermenu.jsonc",
+		"~/.config/sway/waybar/include_modules/workspaces.jsonc",
+		"~/.config/sway/waybar/include_modules/window.jsonc",
+		"~/.config/sway/waybar/include_modules/swayLanguage.jsonc",
+		"~/.config/sway/waybar/include_modules/brightness.jsonc",
+		"~/.config/sway/waybar/include_modules/temperature.jsonc",
+		"~/.config/sway/waybar/include_modules/volume.jsonc",
+		"~/.config/sway/waybar/include_modules/network.jsonc",
+		"~/.config/sway/waybar/include_modules/cpu.jsonc",
+		"~/.config/sway/waybar/include_modules/ram.jsonc",
+		"~/.config/sway/waybar/include_modules/battery.jsonc",
+		"~/.config/sway/waybar/include_modules/clock.jsonc",
+		"~/.config/sway/waybar/include_modules/notification.jsonc",
+	],
+}

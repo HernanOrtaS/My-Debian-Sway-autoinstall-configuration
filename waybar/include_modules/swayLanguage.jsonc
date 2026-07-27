@@ -1,0 +1,13 @@
+{
+	"sway/language": {
+		"format": " {short}",
+		"tooltip": true,
+		"tooltip-format": "Layout: {long}",
+
+		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+		"on-click-right": "swaymsg input type:keyboard xkb_switch_layout prev",
+
+		"on-scroll-up": "swaymsg input type:keyboard xkb_switch_layout next",
+		"on-scroll-down": "swaymsg input type:keyboard xkb_switch_layout prev"
+	}
+}

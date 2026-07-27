@@ -1,0 +1,14 @@
+{
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+
+		"format": "{icon} {capacity}%",
+		"format-charging": "<span color='#ffead3'>{icon} {capacity}%</span>",
+
+		"states": {
+			"warning": 30,
+			"critical": 15,
+		},
+	}
+}
