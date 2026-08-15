@@ -8,7 +8,7 @@
 
 		"menu-actions": {
 			"shutdown": "systemctl poweroff",
-			"reboot": "systemctl restart",
+			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}

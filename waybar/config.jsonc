@@ -36,6 +36,7 @@
 		"modules": [
 			"pulseaudio",
 			"backlight",
+			"idle_inhibitor",
 			"sway/language",
 			"network",
 		],
@@ -62,9 +63,11 @@
 	},
 
 	"include": [
+		"~/.config/sway/waybar/include_modules/idleInhibitor.jsonc",
 		"~/.config/sway/waybar/include_modules/powermenu.jsonc",
 		"~/.config/sway/waybar/include_modules/workspaces.jsonc",
 		"~/.config/sway/waybar/include_modules/window.jsonc",
+		"~/.config/sway/waybar/include_modules/tray.jsonc",
 		"~/.config/sway/waybar/include_modules/swayLanguage.jsonc",
 		"~/.config/sway/waybar/include_modules/brightness.jsonc",
 		"~/.config/sway/waybar/include_modules/temperature.jsonc",

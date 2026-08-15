@@ -6,10 +6,11 @@
 		"format-disconnected": "Disconnected",
 		
 		"tooltip-format": "{ifname}",
-		"tooltip-format-wifi": "IP: {ipaddr}<br>Signal: ({signalStrength}%)",
+		"tooltip-format-wifi": "IP: {ipaddr} \nSignal: ({signalStrength}%) \nUp: {bandwidthUpBits} \nDown: {bandwidthDownBits} \nTotal: {bandwidthTotalBits}:",
 		"tooltip-format-ethernet": "IP: {ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		
+		"family": "ipv4",
 		"max-length": 50,
 	}
 }

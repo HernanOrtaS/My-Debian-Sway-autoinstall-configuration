@@ -3,15 +3,16 @@
 @define-color text rgba(254, 254, 254, 1.0);
 @define-color disabled rgba(254, 254, 254, 0.6);
 
-@define-color performance rgba(50, 50, 50, 0.7);
-@define-color options rgba(40, 70, 70, 0.7);
-@define-color utility rgba(50, 50, 50, 0.7);
-@define-color workspace-module rgba(40, 70, 70, 0.7);
-@define-color window-module rgba(30, 30, 30, 0.8);
+@define-color performance rgba(40, 170, 100, 0.5);
+@define-color options rgba(62, 137, 137, 0.5);
+@define-color utility rgba(40, 170, 100, 0.5);
+@define-color workspace-module rgba(25, 60, 45, 0.6);
+@define-color window-module rgba(26, 55, 45, 0.8);
 
 
-@define-color hover-element rgba(100, 100, 100, 0.3);
-@define-color workspace-active rgba(100, 100, 100, 0.5);
+@define-color hover-element rgba(180, 180, 180, 0.3);
+@define-color workspace-active rgba(44, 218, 157, 0.5);
+@define-color workspace-inactive-text rgba(44, 218, 157, 1.0);
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -195,7 +196,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #ffffff00;
 }
 
 #l-workspace {
@@ -215,7 +216,8 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: @transparent;
-    color: #ffffff;
+    color: @workspace-inactive-text;
+    font-weight: bold;
 }
 
 #workspaces button:hover {
@@ -225,11 +227,14 @@ button:hover {
 
 #workspaces button.focused {
     background-color: @workspace-active;
+    color: #dfefdf;
+    border-radius: 15px 0px 15px 0px;
     font-weight: bold;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+    border-radius: 15px 0px 15px 0px;
 }
 
 #l-window {
@@ -383,12 +388,21 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: @transparent;
+}
+
+#idle_inhibitor:hover {
+    background-color: @transparent;
+    background: @hover-element;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: @transparent;
+}
+
+#idle_inhibitor.activated:hover {
+    background-color: @transparent;
+    background: @hover-element;
 }
 
 #mpd {
