@@ -1,0 +1,38 @@
+#!/bin/bash
+
+HEIGHT=25
+WIDTH=50
+CHOICE_HEIGHT=5
+
+TITLE="Config Waybar"
+MENU="Select an option:"
+
+export DIALOGRC="$HOME/.config/sway/scripts/choose_waybar/dialogrc"
+
+OPTIONS=(
+    1 "Select Primary Color"
+    2 "Select Secondary Color"
+    3 "Select Opacity"
+)
+
+CHOICE=$(dialog --clear \
+    --title "$TITLE" \
+    --backtitle "$BACKTITLE" \
+    --menu "$MENU" \
+    "$HEIGHT" "$WIDTH" "$CHOICE_HEIGHT" \
+    "${OPTIONS[@]}" \
+    2>&1 >/dev/tty)
+
+clear
+
+case "$CHOICE" in
+    1)
+        bash ~/.config/sway/scripts/choose_waybar/waybarPrimaryColor.sh
+        ;;
+    2)
+        bash ~/.config/sway/scripts/choose_waybar/waybarSecondaryColor.sh
+        ;;
+    3)
+        bash ~/.config/sway/scripts/choose_waybar/waybarOpacity.sh
+        ;;
+esac

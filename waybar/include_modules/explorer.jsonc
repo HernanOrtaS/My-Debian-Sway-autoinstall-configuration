@@ -1,0 +1,9 @@
+{
+	"custom/explorer": {
+		"format": "",
+		"tooltip": true,
+		"tooltip-format": "File Explorer",
+
+		"on-click": "thunar",
+	}
+}

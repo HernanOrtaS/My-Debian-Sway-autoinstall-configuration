@@ -1,0 +1,56 @@
+#!/bin/bash
+
+HEIGHT=25
+WIDTH=50
+CHOICE_HEIGHT=5
+
+TITLE="Miscelanius Options"
+MENU="Select an option:"
+
+export DIALOGRC="$HOME/.config/sway/scripts/open_config/dialogrc"
+
+CURRENT_LAYOUT=$(swaymsg -t get_inputs -r | jq -r '.[] | select(.type == "keyboard") | .xkb_active_layout_name' | head -n1)
+
+OPTIONS=(
+    1 "Network Manager"
+    2 "Audio"
+    3 "Waybar Config"
+    4 "Background Image"
+    5 "Keyboard Lang: [$CURRENT_LAYOUT]"
+    6 "Lightdm Image"
+    7 "Lightdm User Image"
+)
+
+CHOICE=$(dialog --clear \
+    --title "$TITLE" \
+    --backtitle "$BACKTITLE" \
+    --menu "$MENU" \
+    "$HEIGHT" "$WIDTH" "$CHOICE_HEIGHT" \
+    "${OPTIONS[@]}" \
+    2>&1 >/dev/tty)
+
+clear
+
+case "$CHOICE" in
+    1)
+        bash ~/.config/sway/scripts/nmtui/nmtui.sh
+        ;;
+    2)
+        pulsemixer
+        ;;
+    3)
+        bash ~/.config/sway/scripts/choose_waybar/waybarConfig.sh
+        ;;
+    4)
+        bash ~/.config/sway/scripts/set_wallpaper/openRanger.sh
+        ;;
+    5)
+        bash ~/.config/sway/scripts/input_keyboard/nextInput.sh
+        ;;
+    6)
+        bash ~/.config/sway/scripts/lightdm/set_background/openRanger.sh
+        ;;
+    7)
+        bash ~/.config/sway/scripts/lightdm/set_user_image/openRanger.sh
+        ;;
+esac

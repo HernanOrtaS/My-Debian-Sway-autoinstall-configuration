@@ -7,13 +7,18 @@
 	"margin-right": 5,
 	
 	
-	"modules-left": ["group/l-workspace", "sway/workspaces", "group/r-workspace", "sway/mode"],
+	"modules-left": [
+		"group/l-startup", "group/startup", "group/r-startup",
+		"group/l-workspace", "sway/workspaces", "group/r-workspace", "sway/mode",
+	],
+
 	"modules-center": ["group/l-window", "sway/window", "group/r-window"],
 	
 	"modules-right": [
 		"group/l-performance", "group/performance", "group/r-performance",
 		"group/l-options", "group/options", "group/r-options",
 		"group/l-utility", "group/utility", "group/r-utility",
+		"battery",
 	],
 	
 	"group/performance": {
@@ -21,7 +26,6 @@
 		"modules": [
 			"memory",
 			"cpu",
-			"battery",
 			"temperature",
 		],
 		
@@ -29,6 +33,22 @@
 			"transition-duration": 300,
 			"click-to-reveal": false
 		},
+	},
+
+	"group/startup": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/launcher",
+			"custom/explorer",
+			"custom/browser",
+			"custom/code",
+		],
+
+		"drawer": {
+			"transition-duration": 300,
+			"click-to-reveal": false
+		},
+		
 	},
 	
 	"group/options": {
@@ -61,6 +81,7 @@
 			"click-to-reveal": false
 		},
 	},
+	
 
 	"include": [
 		"~/.config/sway/waybar/include_modules/idleInhibitor.jsonc",
@@ -78,5 +99,9 @@
 		"~/.config/sway/waybar/include_modules/battery.jsonc",
 		"~/.config/sway/waybar/include_modules/clock.jsonc",
 		"~/.config/sway/waybar/include_modules/notification.jsonc",
+		"~/.config/sway/waybar/include_modules/launcher.jsonc",
+		"~/.config/sway/waybar/include_modules/browser.jsonc",
+		"~/.config/sway/waybar/include_modules/code.jsonc",
+		"~/.config/sway/waybar/include_modules/explorer.jsonc",
 	],
 }

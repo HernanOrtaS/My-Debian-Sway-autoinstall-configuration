@@ -1,0 +1,9 @@
+{
+	"custom/browser": {
+		"format": "",
+		"tooltip": true,
+		"tooltip-format": "Browser",
+
+		"on-click": "flatpak run com.brave.Browser",
+	}
+}

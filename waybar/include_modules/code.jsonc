@@ -1,0 +1,9 @@
+{
+	"custom/code": {
+		"format": "",
+		"tooltip": true,
+		"tooltip-format": "Code",
+
+		"on-click": "code",
+	}
+}

@@ -1,0 +1,19 @@
+@import "current_colors.css";
+
+@define-color transparent rgba(0, 0, 0, 0.0);
+
+@define-color text @secondary-color;
+@define-color disabled rgba(254, 254, 254, 0.6);
+
+@define-color performance @primary-color;
+@define-color options @primary-color;
+@define-color utility @primary-color;
+@define-color workspace-module @primary-color;
+@define-color window-module @primary-color;
+@define-color startup @primary-color;
+
+
+@define-color hover-element rgba(180, 180, 180, 0.3);
+@define-color workspace-active @secondary-color;
+@define-color workspace-active-text @primary-color;
+@define-color workspace-inactive-text @secondary-color;

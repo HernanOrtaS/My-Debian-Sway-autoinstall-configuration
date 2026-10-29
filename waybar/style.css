@@ -1,28 +1,14 @@
-@define-color transparent rgba(0, 0, 0, 0.0);
-
-@define-color text rgba(254, 254, 254, 1.0);
-@define-color disabled rgba(254, 254, 254, 0.6);
-
-@define-color performance rgba(40, 170, 100, 0.5);
-@define-color options rgba(62, 137, 137, 0.5);
-@define-color utility rgba(40, 170, 100, 0.5);
-@define-color workspace-module rgba(25, 60, 45, 0.6);
-@define-color window-module rgba(26, 55, 45, 0.8);
-
-
-@define-color hover-element rgba(180, 180, 180, 0.3);
-@define-color workspace-active rgba(44, 218, 157, 0.5);
-@define-color workspace-inactive-text rgba(44, 218, 157, 1.0);
+@import 'waybar_styles/format_style.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: Quicksand Medium, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0);
-    color: #ffffff;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -39,6 +25,45 @@ window#waybar.solo {
     background-color: #FFFFFF;
 }
 */
+
+/* STARTUP MODULE*/
+
+#startup {
+    background-color: @startup;
+    padding: 0px 8px 0px 8px;
+}
+
+#l-startup {
+	/*vertical & horizontal*/
+	margin: 0px 0px 0px 0px;
+	border-left: 15px solid @transparent;
+	border-bottom: 30px solid @startup;
+}
+
+#r-startup {
+	/*vertical & horizontal*/
+	margin: 0px 0px 0px 0px;
+	border-left: 15px solid @startup;
+	border-bottom: 30px solid @transparent;
+}
+
+/* APPS MODULE*/
+
+#custom-launcher, #custom-explorer, #custom-browser, #custom-code{
+    background-color: @transparent;
+    padding: 0px 5px 0px 5px;
+    font-size: 16px;
+}
+
+#custom-launcher {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d60000;
+}
+
+#custom-launcher:hover, #custom-explorer:hover, #custom-browser:hover, #custom-code:hover {
+    background-color: @hover-element;
+}
 
 /* PERFORMANCE MODULE*/
 
@@ -103,10 +128,24 @@ window#waybar.solo {
 	border-bottom: 30px solid @transparent;
 }
 
+#battery {
+    margin: 0px 10px 0px 10px;
+    border-radius: 8px;
+}
 
-#battery.charging, #battery.plugged {
+#battery.discharging, #battery.charging, #battery.full {
+    color: @text;
+    background-color: @performance;
+}
+
+#battery.discharging:hover, #battery.charging:hover {
+    color: @performance;
+    background-color: @text;
+}
+
+#battery.warning:not(.charging) {
+    background-color: rgba(239, 146, 46, 0.801);
     color: #ffffff;
-    background-color: #26A65B;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -131,7 +170,11 @@ window#waybar.solo {
 #pulseaudio,
 #clock,
 #tray,
-#custom-notification {
+#custom-notification,
+#custom-powermenu,
+#idle_inhibitor,
+#idle_inhibitor.activated {
+    padding: 5px 10px;
     background-color: @transparent;
     color: @text;
 }
@@ -146,7 +189,10 @@ window#waybar.solo {
 #pulseaudio:hover,
 #clock:hover,
 #tray:hover,
-#custom-notification:hover {
+#custom-notification:hover,
+#custom-powermenu:hover,
+#idle_inhibitor:hover,
+#idle_inhibitor.activated:hover  {
     background: @hover-element;
 }
 
@@ -227,7 +273,7 @@ button:hover {
 
 #workspaces button.focused {
     background-color: @workspace-active;
-    color: #dfefdf;
+    color: @workspace-active-text;
     border-radius: 15px 0px 15px 0px;
     font-weight: bold;
 }
@@ -253,35 +299,9 @@ button:hover {
 	font-weight: bold;
 }
 
-#custom-powermenu {
-	padding: 0px 15px;
-}
-
 #mode {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#custom-notification,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-    padding: 5px 10px;
-    color: #ffffff;
 }
 
 #window,
@@ -385,24 +405,6 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: @transparent;
-}
-
-#idle_inhibitor:hover {
-    background-color: @transparent;
-    background: @hover-element;
-}
-
-#idle_inhibitor.activated {
-    background-color: @transparent;
-}
-
-#idle_inhibitor.activated:hover {
-    background-color: @transparent;
-    background: @hover-element;
 }
 
 #mpd {

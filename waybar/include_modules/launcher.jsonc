@@ -1,0 +1,9 @@
+{
+	"custom/launcher": {
+		"format": "",
+		"tooltip": true,
+		"tooltip-format": "App Launcher\n$Super + Space",
+
+		"on-click": "fuzzel --config ~/.config/sway/fuzzel/fuzzel.ini",
+	}
+}

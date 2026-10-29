@@ -21,9 +21,11 @@ set $menu wmenu-run
 include /etc/sway/config-vars.d/*
 
 output eDP-1 resolution 1920x1080 position 0,0
-output VGA-1 resolution 1920x1080 position 0,0
-output Virtual-1 resolution 1920x1080 position 0,0
+output DP-1 resolution 1366x768 position 1920,0
+# output VGA-1 resolution 1920x1080 position 0,0
+# output Virtual-1 resolution 1920x1080 position 0,0
 workspace 1 output eDP-1
+#workspace 2 output DP-2
 
 default_border pixel 3
 default_floating_border pixel 3
@@ -58,7 +60,7 @@ client.unfocused	#353535 #222222 #888888 #95a57a50   #95a57a50
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 600 'swaylock -f -c 000000' \
+         timeout 600 'swaylock -f -c ~/.config/sway/swaylock/config.conf' \
          timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
@@ -229,8 +231,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim ~/Pictures/Screenshots/$(date +"%F_%H-%M-%S")
-    bindsym $mod+Print exec grim -g "$(slurp -d)" - | wl-copy
+    bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
+    bindsym $mod+Print exec grim ~/Pictures/Screenshots/$(date +"%F_%H-%M-%S")
 
 #
 # Status Bar:
@@ -266,12 +268,37 @@ bindgesture swipe:right workspace prev
 exec nm-applet
 exec blueman-applet
 exec autotiling
+exec lxqt-policykit-agent 
 
 exec_always bash ~/.config/sway/waybar/start-waybar.sh
 exec_always bash ~/.config/sway/swaync/start-swaync.sh
-exec swaybg -i ~/.config/sway/wallpaper/1920x1080.svg
+exec swaybg -i ~/.config/sway/wallpaper/current.jpg
 
 
 bindsym $mod+Space exec fuzzel --config ~/.config/sway/fuzzel/fuzzel.ini
+#bindsym $mod+Space exec rofi -show drun -config ~/.config/sway/rofi/config.rasi
 
 include /etc/sway/config.d/*
+
+
+for_window [app_id="imageRanger"] {
+    floating enable
+    border none
+    resize set width 1200 px height 800 px
+}
+
+for_window [app_id="openConfig"] {
+    floating enable
+    border none
+    resize set width 1200 px height 800 px
+}
+
+for_window [app_id="nmtui"] {
+    floating enable
+    border none
+    resize set width 1200 px height 800 px
+}
+    
+    
+bindsym $mod+i exec ~/.config/sway/scripts/set_wallpaper/openRanger.sh
+bindsym $mod+o exec ~/.config/sway/scripts/open_config/openConfig.sh
