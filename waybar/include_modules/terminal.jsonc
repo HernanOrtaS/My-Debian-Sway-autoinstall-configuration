@@ -1,0 +1,9 @@
+{
+	"custom/terminal": {
+		"format": "",
+		"tooltip": true,
+		"tooltip-format": "Terminal",
+
+		"on-click": "foot -c ~/.config/sway/foot/foot.ini",
+	}
+}

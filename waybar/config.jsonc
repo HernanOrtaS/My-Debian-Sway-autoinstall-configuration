@@ -41,7 +41,7 @@
 			"custom/launcher",
 			"custom/explorer",
 			"custom/browser",
-			"custom/code",
+			"custom/terminal",
 		],
 
 		"drawer": {
@@ -101,7 +101,7 @@
 		"~/.config/sway/waybar/include_modules/notification.jsonc",
 		"~/.config/sway/waybar/include_modules/launcher.jsonc",
 		"~/.config/sway/waybar/include_modules/browser.jsonc",
-		"~/.config/sway/waybar/include_modules/code.jsonc",
+		"~/.config/sway/waybar/include_modules/terminal.jsonc",
 		"~/.config/sway/waybar/include_modules/explorer.jsonc",
 	],
 }

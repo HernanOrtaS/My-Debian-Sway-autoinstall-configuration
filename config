@@ -60,7 +60,7 @@ client.unfocused	#353535 #222222 #888888 #95a57a50   #95a57a50
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 600 'swaylock -f -c ~/.config/sway/swaylock/config.conf' \
+         timeout 600 'swaylock -f --config ~/.config/sway/swaylock/config.conf' \
          timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
@@ -276,7 +276,6 @@ exec swaybg -i ~/.config/sway/wallpaper/current.jpg
 
 
 bindsym $mod+Space exec fuzzel --config ~/.config/sway/fuzzel/fuzzel.ini
-#bindsym $mod+Space exec rofi -show drun -config ~/.config/sway/rofi/config.rasi
 
 include /etc/sway/config.d/*
 
@@ -299,6 +298,4 @@ for_window [app_id="nmtui"] {
     resize set width 1200 px height 800 px
 }
     
-    
-bindsym $mod+i exec ~/.config/sway/scripts/set_wallpaper/openRanger.sh
 bindsym $mod+o exec ~/.config/sway/scripts/open_config/openConfig.sh

@@ -2,8 +2,9 @@
 
 LINKED="$HOME/.config/sway/wallpaper/current.jpg"
 SELECTED_FILE="$(mktemp)"
+RANGER_CONFIG="$HOME/.config/sway/ranger"
 
-ranger --choosefile="$SELECTED_FILE"
+ranger --confdir="$RANGER_CONFIG" --choosefile="$SELECTED_FILE"
 
 if [ ! -s "$SELECTED_FILE" ]; then
     rm -f "$SELECTED_FILE"

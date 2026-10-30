@@ -49,7 +49,7 @@ window#waybar.solo {
 
 /* APPS MODULE*/
 
-#custom-launcher, #custom-explorer, #custom-browser, #custom-code{
+#custom-launcher, #custom-explorer, #custom-browser, #custom-terminal{
     background-color: @transparent;
     padding: 0px 5px 0px 5px;
     font-size: 16px;
@@ -61,7 +61,7 @@ window#waybar.solo {
     color: #d60000;
 }
 
-#custom-launcher:hover, #custom-explorer:hover, #custom-browser:hover, #custom-code:hover {
+#custom-launcher:hover, #custom-explorer:hover, #custom-browser:hover, #custom-terminal:hover {
     background-color: @hover-element;
 }
 

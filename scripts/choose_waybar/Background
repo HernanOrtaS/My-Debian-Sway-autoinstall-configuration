@@ -1,0 +1,52 @@
+#!/bin/bash
+RESET_WAYBAR="$HOME/.config/sway/waybar/start-waybar.sh"
+
+COLOR_DIR="$HOME/.config/sway/waybar/waybar_styles/waybar_colors/"
+CURRENT="$HOME/.config/sway/waybar/waybar_styles/primary.css"
+
+HEIGHT=20
+WIDTH=50
+CHOICE_HEIGHT=10
+
+export DIALOGRC="$HOME/.config/sway/scripts/choose_waybar/dialogrc"
+
+OPTIONS=()
+
+while IFS= read -r -d '' FILE; do
+    NAME=$(basename "$FILE")
+    OPTIONS+=("$NAME" "")
+done < <(
+    find "$COLOR_DIR" -maxdepth 1 -type f -name '*.css' \
+        ! -name 'current.css' -print0 | sort -z
+)
+
+if [ ${#OPTIONS[@]} -eq 0 ]; then
+    dialog --title "Background Color" \
+        --msgbox "No CSS files found in:\n$COLOR_DIR" 8 50
+    clear
+    exit 1
+fi
+
+SELECTED=$(dialog --clear \
+    --title "Background Color" \
+    --menu "Select a background color:" \
+    "$HEIGHT" "$WIDTH" "$CHOICE_HEIGHT" \
+    "${OPTIONS[@]}" \
+    2>&1 >/dev/tty)
+
+clear
+
+if [ -n "$SELECTED" ]; then
+    COLOR=$(cat "$COLOR_DIR/$SELECTED")
+    OPACITY_FILE="$HOME/.config/sway/waybar/waybar_styles/opacity"
+
+    OPACITY="1.00"
+    [ -f "$OPACITY_FILE" ] && OPACITY=$(cat "$OPACITY_FILE")
+
+    printf '@define-color primary-color rgba(%s, %s);\n' \
+        "$COLOR" "$OPACITY" > "$CURRENT"
+
+fi
+
+nohup bash "$RESET_WAYBAR" >/dev/null 2>&1 &
+clear

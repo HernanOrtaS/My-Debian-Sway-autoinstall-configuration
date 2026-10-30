@@ -1,9 +1,9 @@
 {
 	"custom/code": {
-		"format": "",
+		"format": "",
 		"tooltip": true,
 		"tooltip-format": "Code",
 
-		"on-click": "code",
+		"on-click": "foot -c ~/.config/sway/foot/foot.ini",
 	}
 }

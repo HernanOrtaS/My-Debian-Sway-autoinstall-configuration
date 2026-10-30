@@ -28,9 +28,10 @@ sudo cp ./lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 mkdir -p ~/.config/sway/wallpaper/
 
-sudo mv /usr/share/desktop-base/emerald-theme/lockscreen/contents/images/1920x1080.svg ~/.config/sway/wallpaper/current.jpg
+sudo cp /usr/share/desktop-base/emerald-theme/lockscreen/contents/images/1920x1080.svg ~/Pictures/Wallpapers/1920x1080.svg
+ls -s ~/Pictures/Wallpapers/1920x1080.svg ~/.config/sway/wallpaper/current.jpg
 sudo mkdir -r /usr/share/lightdm/images/
-sudo mv /usr/share/desktop-base/emerald-theme/lockscreen/contents/images/1920x1080.svg /usr/share/lightdm/images/current_background.jpg
+sudo cp /usr/share/desktop-base/emerald-theme/lockscreen/contents/images/1920x1080.svg /usr/share/lightdm/images/current_background.jpg
 
 sudo apt install -y flatpak
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -54,4 +55,6 @@ sudo apt install -y xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal
 
 sudo apt install -y build-essential dkms linux-headers-$(uname -r)
 
-echo "Completado"
+echo "finished"
+
+systemctl reboot

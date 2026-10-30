@@ -4,6 +4,7 @@
 		"format-wifi": "  {essid}",
 		"format-ethernet": " Ethernet",
 		"format-disconnected": "Disconnected",
+		"on-click": "nm-connection-editor",
 		
 		"tooltip-format": "{ifname}",
 		"tooltip-format-wifi": "IP: {ipaddr} \nSignal: ({signalStrength}%) \nUp: {bandwidthUpBits} \nDown: {bandwidthDownBits} \nTotal: {bandwidthTotalBits}:",

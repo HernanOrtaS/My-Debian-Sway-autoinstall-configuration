@@ -7,4 +7,5 @@ nohup kitty \
     --config "$CONFIG" \
     --app-id openConfig \
     "$MENU" \
-    & clear
+    >/dev/null 2>&1 &
+clear
