@@ -3,7 +3,7 @@
 
 This is my personal configuration of Debian/Sway, i'm gonna still develop the project. I've added a bash script to make a faster install and configuration. Feel free to try it.
 
-![Screenshot](https://github.com/HernanOrtaS/)
+![Screenshot](https://github.com/HernanOrtaS/DebianSwaySetup/blob/0f9d2e79354dd0f110c09134c1b084ee53718982/screenshots/DebianSwayPreview.gif)
 
 ## Description
 
