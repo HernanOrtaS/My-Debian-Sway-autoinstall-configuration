@@ -3,6 +3,7 @@
 
 This is my personal configuration of Debian/Sway, i'm gonna still develop the project. I've added a bash script to make a faster install and configuration. Feel free to try it.
 
+![Screenshot](https://github.com/HernanOrtaS/)
 
 ## Description
 
@@ -24,7 +25,7 @@ Once you finished, you can login with your user and install git.
 Now you can clone the repository to start the installation with:
 
 ```bash
-git clone https://github.com/HernanOrtaS/My-Debian-Sway-autoinstall-configuration.git
+git clone https://github.com/HernanOrtaS/DebianSwaySetup.git
 ```
 
 ## Install
@@ -42,6 +43,28 @@ When finished, you can run
   sway
 ```
 to try the configuration or simply reboot the system.
+
+## Keybinds
+```bash
+# Open Misc Options
+	$mod + O
+	
+# App Launcher
+	$mod + Space
+	
+# Open Power menu
+	$mod + Shift + X
+
+# Close current window
+	$mod + Shift + Q
+
+# Select area to copy to clipboard
+	printscreen
+
+# Full screenshot
+	$mod + printscreen
+	
+```
 
 That's it, enjoy and have fun.
 ## Authors

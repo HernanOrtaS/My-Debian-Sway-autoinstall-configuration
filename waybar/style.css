@@ -138,7 +138,7 @@ window#waybar.solo {
     background-color: @performance;
 }
 
-#battery.discharging:hover, #battery.charging:hover {
+#battery.discharging:hover, #battery.charging:hover, #battery.full:hover {
     color: @performance;
     background-color: @text;
 }
@@ -177,23 +177,36 @@ window#waybar.solo {
     padding: 5px 10px;
     background-color: @transparent;
     color: @text;
+    border-radius: 15px 0px 15px 0px;
 }
+
+
+#backlight:hover,
+#language:hover,
+#pulseaudio:hover,
+#network:hover,
+#idle_inhibitor:hover,
+#idle_inhibitor.activated:hover  {
+    background-color: @text;
+    color: @options;
+}
+
 
 #battery:hover,
 #temperature:hover,
 #cpu:hover,
-#memory:hover,
-#language:hover,
-#network:hover,
-#backlight:hover,
-#pulseaudio:hover,
+#memory:hover {
+    background-color: @text;
+    color: @performance;
+}
+
+
 #clock:hover,
 #tray:hover,
 #custom-notification:hover,
-#custom-powermenu:hover,
-#idle_inhibitor:hover,
-#idle_inhibitor.activated:hover  {
-    background: @hover-element;
+#custom-powermenu:hover {
+    background-color: @text;
+    color: @utility;
 }
 
 #disk {
@@ -264,6 +277,7 @@ button:hover {
     background-color: @transparent;
     color: @workspace-inactive-text;
     font-weight: bold;
+    border-radius: 15px 0px 15px 0px;
 }
 
 #workspaces button:hover {
@@ -274,13 +288,12 @@ button:hover {
 #workspaces button.focused {
     background-color: @workspace-active;
     color: @workspace-active-text;
-    border-radius: 15px 0px 15px 0px;
+    
     font-weight: bold;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
-    border-radius: 15px 0px 15px 0px;
 }
 
 #l-window {

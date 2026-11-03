@@ -29,8 +29,8 @@ sudo cp ./lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 mkdir -p ~/.config/sway/wallpaper/
 
 sudo cp /usr/share/desktop-base/emerald-theme/lockscreen/contents/images/1920x1080.svg ~/Pictures/Wallpapers/1920x1080.svg
-ls -s ~/Pictures/Wallpapers/1920x1080.svg ~/.config/sway/wallpaper/current.jpg
-sudo mkdir -r /usr/share/lightdm/images/
+ln -s ~/Pictures/Wallpapers/1920x1080.svg ~/.config/sway/wallpaper/current.jpg
+sudo mkdir -p /usr/share/lightdm/images/
 sudo cp /usr/share/desktop-base/emerald-theme/lockscreen/contents/images/1920x1080.svg /usr/share/lightdm/images/current_background.jpg
 
 sudo apt install -y flatpak

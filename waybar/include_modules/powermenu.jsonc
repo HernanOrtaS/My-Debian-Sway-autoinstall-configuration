@@ -9,8 +9,9 @@
 		"menu-actions": {
 			"shutdown": "systemctl poweroff",
 			"reboot": "systemctl reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
+			"suspend": "swaylock -f --config ~/.config/sway/swaylock/config.conf && systemctl suspend",
+			"hibernate": "swaylock -f --config ~/.config/sway/swaylock/config.conf && systemctl hibernate",
+			"block": "swaylock -f --config ~/.config/sway/swaylock/config.conf",
 		}
 	},
 }

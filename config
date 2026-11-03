@@ -299,3 +299,4 @@ for_window [app_id="nmtui"] {
 }
     
 bindsym $mod+o exec ~/.config/sway/scripts/open_config/openConfig.sh
+bindsym $mod+Shift+x exec ~/.config/sway/scripts/powermenu/power.sh

@@ -7,7 +7,7 @@
 		"on-click": "nm-connection-editor",
 		
 		"tooltip-format": "{ifname}",
-		"tooltip-format-wifi": "IP: {ipaddr} \nSignal: ({signalStrength}%) \nUp: {bandwidthUpBits} \nDown: {bandwidthDownBits} \nTotal: {bandwidthTotalBits}:",
+		"tooltip-format-wifi": "Network: {essid} \nSignal: ({signalStrength}%) \nIP: {ipaddr} \nUp: {bandwidthUpBits} \nDown: {bandwidthDownBits} \nTotal: {bandwidthTotalBits}:",
 		"tooltip-format-ethernet": "IP: {ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		
